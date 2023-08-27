@@ -14,7 +14,7 @@ public class MoneyTransferTest {
     DashBoardPage dashBoardPage;
 
     @BeforeEach
-    public void setup() {
+    void setup() {
         var loginPage = open("http://localhost:9999", LoginPage.class);
         var authInfo = getAuthInfo();
         var verificationPage = loginPage.validLogin(authInfo);
@@ -22,10 +22,9 @@ public class MoneyTransferTest {
         dashBoardPage = verificationPage.validVerify(verificationCode);
 
     }
-
     @Test
     @DisplayName("Should Transfer Money From First Card To Second")
-    void shouldTransferMoneyFromFirstToSecond() {
+    void shouldTransferMoneyFromFirstCardToSecond() {
         var firstCardInfo = getFirstCardInfo();
         var secondCardInfo = getSecondCardInfo();
         var firstCardBalance = dashBoardPage.getCardBalance(firstCardInfo);
@@ -40,7 +39,6 @@ public class MoneyTransferTest {
         assertEquals(expectedBalanceFirstCard, actualBalanceFirstCard);
         assertEquals(expectedBalanceSecondCard, actualBalanceSecondCard);
     }
-
 
     @Test
     @DisplayName("Should Get Error Message If Amount More Balance")
@@ -58,8 +56,5 @@ public class MoneyTransferTest {
         assertEquals(firstCardBalance, actualBalanceFirstCard);
         assertEquals(secondCardBalance, actualBalanceSecondCard);
     }
-
-
-
 
 }

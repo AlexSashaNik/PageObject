@@ -1,3 +1,4 @@
+Project **Page Object** [![Build status](https://ci.appveyor.com/api/projects/status/3rrxuq09s8e516l5/branch/main?svg=true)](https://ci.appveyor.com/project/AlexSashaNik/pageobject/branch/main)
 
 **Задача №1: Page Object's**
 
