@@ -9,11 +9,12 @@ import ru.netology.web.page.LoginPage;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static ru.netology.web.data.DataHelper.*;
+import static com.codeborne.selenide.Selenide.open;
 
 public class MoneyTransferTest {
     DashBoardPage dashBoardPage;
 
-    @BeforeEach
+   @BeforeEach
     void setup() {
         var loginPage = open("http://localhost:9999", LoginPage.class);
         var authInfo = getAuthInfo();
@@ -56,5 +57,6 @@ public class MoneyTransferTest {
         assertEquals(firstCardBalance, actualBalanceFirstCard);
         assertEquals(secondCardBalance, actualBalanceSecondCard);
     }
+
 
 }
